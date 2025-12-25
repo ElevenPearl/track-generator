@@ -74,7 +74,21 @@ svg .comp{cursor:grab}
 svg .note{cursor:move; font-size:12px; font-family:Inter, Arial}
 
 /* responsive */
-@media (max-width:980px){ .wrap{grid-template-columns:1fr;padding:12px} .svg-canvas{height:200px} }
+@media (max-width: 768px) {
+  .canvas-wrap {
+    padding: 8px;
+  }
+
+  svg {
+    height: 260px !important;
+  }
+}
+@media (max-width:768px)
+{.wrap{display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 12px;}
+.svg-canvas{height:200px} }
 .customer-bar {
   background: #ffffff;
   border-radius: 10px;
@@ -83,12 +97,18 @@ svg .note{cursor:move; font-size:12px; font-family:Inter, Arial}
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.customer-inline {
-  display: grid;
-  grid-template-columns: 1.6fr 1.2fr 3fr 1.2fr;
-  gap: 10px;
-  align-items: center;
+@media (max-width: 768px) {
+  .customer-inline {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .customer-inline > div {
+    min-width: 180px;
+  }
 }
+
 
 .customer-inline label {
   display: block;
@@ -154,6 +174,33 @@ svg .note{cursor:move; font-size:12px; font-family:Inter, Arial}
   background: #f8f9fa;
   border-radius: 4px;
   white-space: pre-wrap;
+}
+@media (max-width: 768px) {
+  aside.panel {
+    display: none;
+  }
+
+  aside.panel.active {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  button,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    font-size: 15px;
+  }
+
+  .row {
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .items-panel {
+    order: 99;
+  }
 }
 
 
