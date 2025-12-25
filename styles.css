@@ -29,7 +29,6 @@ body{font-family:Inter,system-ui,Arial;margin:0;background:var(--bg);color:var(-
 }
 .wrap {
   max-width: 100%;
-  width:1200px;
   margin: 18px auto;
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -219,6 +218,7 @@ svg {
   height: auto;
   display: block;
 }
+
 
 
 
