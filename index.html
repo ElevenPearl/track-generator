@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Track Designer - Eleven Pearl</title>
+  <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- PWA / Android manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Android fallback icon (helpful) -->
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+
+<!-- iOS (apple) icon -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+<img class="img2" src="logo.png" alt="">
+    <div class="title">
+      <div class="main">Eleven Pearl</div>
+      <div class="sub">The Nmae Of Lighting Art</div>
+    </div>
+  </div>
+  <div style="display:flex; gap:8px;">
+  <button id="loginBtn" class="btn ghost">Login</button>
+  <button id="exportPng" class="btn ghost">Export PNG</button>
+</div>
+
+</header>
+
+<main class="wrap">
+  
+
+  <aside class="panel">
+
+    <!-- PROFILE TYPE -->
+    <div class="panel-block">
+      <label class="label">Profile Type</label>
+      <select id="profileType">
+        <option value="straight">Profile</option>
+        <option value="bend">Bendable Profile</option>
+        <option value="lshape">L-Shape Profile</option>
+      </select>
+    </div>
+
+    <!-- STRAIGHT / BEND TOTAL -->
+    <div class="panel-block">
+      <label class="label">Total Profile Length (ft)</label>
+      <input id="totalFeet" type="number" value="9" step="0.1">
+      <button id="applyTotal" class="btn" style="margin-top:8px">Apply</button>
+    </div>
+
+    <!-- BEND OPTIONS -->
+    <div class="panel-block" id="bendOptions" style="display:none">
+      <label class="label">Bend Point (ft from start)</label>
+      <input id="bendPoint" type="number" value="5" step="0.1">
+
+      <label class="label" style="margin-top:8px">Bend Angle (°)</label>
+      <input id="bendAngle" type="number" value="45" min="5" max="170">
+    </div>
+
+    <!-- L SHAPE OPTIONS -->
+    <div class="panel-block" id="lshapeOptions" style="display:none">
+      <label class="label">First Profile Length (ft)</label>
+      <input id="legA" type="number" value="5" step="0.1">
+
+      <label class="label" style="margin-top:8px">Second Profile Length (ft)</label>
+      <input id="legB" type="number" value="4" step="0.1">
+    </div>
+
+    <hr>
+
+    <!-- EXISTING CONTROLS (UNCHANGED) -->
+    <div class="panel-block">
+      <label class="label">Diffuser (ft)</label>
+      <div class="row">
+        <input id="diffLen" type="number" value="6">
+        <button id="addDiff" class="btn">Add Diffuser</button>
+      </div>
+    </div>
+
+    <div class="panel-block">
+      <label class="label">Lenia (heads)</label>
+      <div class="row">
+        <select id="leniaHeads">
+          <option value="5">5-head</option>
+          <option value="6">6-head</option>
+        </select>
+        <button id="addLenia" class="btn">Add Lenia</button>
+      </div>
+    </div>
+
+    <div class="panel-block">
+      <label class="label">Spot</label>
+      <button id="addSpot" class="btn secondary">Add Spot</button>
+    </div>
+
+    <div class="panel-block">
+      <label class="label">Note / Label</label>
+      <div class="row">
+        <input id="noteText" placeholder="Enter text">
+        <button id="addNote" class="btn">Add</button>
+      </div>
+    </div>
+
+  </aside>
+
+  <section class="drawing">
+<section class="customer-bar">
+  <div class="customer-inline">
+    <div>
+      <label>Customer</label>
+      <input type="text" id="custName" placeholder="Name">
+    </div>
+
+    <div>
+      <label>Mobile</label>
+      <input type="text" id="custMobile" placeholder="Number">
+    </div>
+
+    <div class="address">
+      <label>Address</label>
+      <input type="text" id="custAddress" placeholder="Address">
+    </div>
+
+    <div>
+      <label>Date</label>
+      <input type="date" id="custDate">
+    </div>
+  </div>
+</section>
+
+
+    <div class="canvas-wrap">
+      <svg id="svgCanvas" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid meet">
+        <g id="rulerGroup"></g>
+        <g id="trackGroup"></g>
+        <g id="componentsGroup"></g>
+        <g id="notesGroup"></g>
+      </svg>
+    </div>
+
+<section class="description-bar">
+  <label> Description</label>
+  <textarea id="descriptionText" placeholder="Enter product description, specifications, or remarks"></textarea>
+</section>
+
+
+  <aside class="panel items-panel">
+    <h4>Items</h4>
+    <div id="itemsList"></div>
+  </aside>
+</section>
+
+
+</main>
+
+<footer class="footer muted">
+  ELEVEN PEARL HOUSE — SURAT • 9898614926
+</footer>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

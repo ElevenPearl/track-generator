@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Staff Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="title">
+    <div class="main2" id="staffTitle">Staff Dashboard</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <aside class="panel">
+    <input id="searchInput" placeholder="Search by customer name">
+    <div id="resultList"></div>
+  </aside>
+
+  <section class="drawing">
+    <h3 id="custTitle">Select a customer</h3>
+    <img id="drawingImg" style="max-width:100%; border:1px solid #ddd">
+<pre id="custDetails"></pre>
+<div id="descriptionBlock" style="display:none;">
+  <h4 class="section-title">Description</h4>
+  <pre id="custDescription"></pre>
+</div>
+  </section>
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="staff.js"></script>
+
+
+</body>
+</html>
