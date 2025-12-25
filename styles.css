@@ -24,8 +24,17 @@ body {
   display: flex;
   justify-content: center;
 }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #968f8d93;
 
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background-color:#968f8d93}
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .brand{display:flex;gap:12px;align-items:center}
 .title .main{font-weight:600}
 .main2{ height: 30px;font-weight:500;font-size: 20px;}
@@ -37,12 +46,13 @@ body {
   align-self: flex-start;
 }
 .wrap {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1200px;   /* ← THIS IS THE KEY FIX */
   margin: 18px auto;
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-auto-rows: auto;
-  align-items: start;   /* IMPORTANT */
+  align-items: start;
   gap: 16px;
 }
 .list.panel.card,
@@ -79,7 +89,7 @@ input[type="number"],input[type="text"],select{padding:8px;border-radius:8px;bor
 .swatch.spot{background:#f04b4b}
 .items-list{display:flex;flex-direction:column;gap:8px;max-height:520px;overflow:auto}
 .item-row{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;border:1px solid #eef6ff;background:#fff}
-.footer{text-align:center;margin:14px auto;color:var(--muted);font-size:13px}
+.footer{text-align:center;margin:14px auto;color:var(--muted);font-size:13pxmax-width: 1200px;}
 
 /* SVG element cursors */
 svg .resize-handle{cursor:ew-resize}
@@ -227,6 +237,7 @@ svg {
   height: auto;
   display: block;
 }
+
 
 
 
