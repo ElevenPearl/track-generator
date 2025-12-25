@@ -15,7 +15,16 @@ html, body {
 }
 .img2{height: 35px;width: 25px;}
 *{box-sizing:border-box}
-body{font-family:Inter,system-ui,Arial;margin:0;background:var(--bg);color:var(--line)}
+body {
+  font-family: Inter, system-ui, Arial;
+  margin: 0;
+  background: var(--bg);
+  color: var(--line);
+
+  display: flex;
+  justify-content: center;
+}
+
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background-color:#968f8d93}
 .brand{display:flex;gap:12px;align-items:center}
 .title .main{font-weight:600}
@@ -218,6 +227,7 @@ svg {
   height: auto;
   display: block;
 }
+
 
 
 
