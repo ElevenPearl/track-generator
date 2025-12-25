@@ -1598,6 +1598,14 @@ if (loginBtn) {
   };
 }
 
+const toggleBtn = document.getElementById("toggleControls");
+const panel = document.querySelector("aside.panel");
+
+if (toggleBtn && panel) {
+  toggleBtn.onclick = () => {
+    panel.classList.toggle("active");
+  };
+}
 
 
 })();
